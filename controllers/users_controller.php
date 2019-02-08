@@ -3,7 +3,7 @@
 
     class GetData{
         public function getUserData(){
-            if(isset($_POST['adduser'])){
+            if(isset($_POST['adduser'])){ //get data for add user
                 $username = $_POST['username'];
                 $balance = $_POST['balance'];
                 $about = $_POST['about'];
