@@ -1,0 +1,75 @@
+body{
+    color: blue;
+}
+h3{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.operation{
+    width: 80%;
+    margin: 0 auto;
+}
+.TransferLogs{
+    display: flex;
+    margin: auto;
+}
+.transfer{
+    font-size: 1.25em;
+    width: 40%;
+    margin-right: 5%;
+}
+.logs{
+    width: 55%;
+}
+.transfer #transferForm input, select{
+    display: block;
+    margin: 20px;
+}
+.transfer #howmany, #message, #btn-transfer{
+    border:none;
+    border-bottom: 1px solid grey;
+    font-size: 1.25em;
+    padding: 10px;
+    outline:none;
+}
+.transfer #sel1, #sel2{
+    border:none;
+    border-bottom: 1px solid grey;
+    background-color: #fff;
+    font-size: 1.25em;
+    padding: 10px;
+    outline:none;
+}
+.transfer #btn-transfer{
+    cursor:pointer;
+}
+
+/*User's div*/
+.users{
+    width: 90%;
+    margin: 30px auto;
+}
+.users #usersForm{
+    margin: 30px auto;
+}
+.users #usersForm input{
+    border:none;
+    border-bottom: 1px solid grey;
+    font-size: 1.25em;
+    padding: 10px;
+    outline:none;
+    display: block;
+    margin: 20px;
+}
+.showUsers{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.25em;
+    width: 100%;
+    margin: 20px;
+}
+.showUsers .user{
+    margin: 20px auto;
+    width: 24%;
+    border: 1px dashed black;
+}
