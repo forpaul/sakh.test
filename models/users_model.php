@@ -15,27 +15,27 @@
             }
         
         }
-
-        public function checkfields($username, $balance, $about){
+        //валидация полей добавления юзера
+        public function checkfields($username, $balance, $about){ 
             $check = "SELECT * FROM users WHERE username = '$username'";
             $result_check = $this->connect()->query($check);
 
-            if(($result_check->num_rows) > 0){
+            if(($result_check->num_rows) > 0){ //одинаковые имена
                 echo 'This username is used. Use other username';
                 header('refresh:2; url=../views/index.php');
             }
-            if(!TreatmentData::checkBalance($balance)){
+            if(!TreatmentData::checkBalance($balance)){ //числовой значение баланса
                 echo 'Balance should be number' . '<br>';
-                echo 'Example: 12345.12';
+                echo 'Example: 12345';
                 header('refresh:2; url=../views/index.php');
             }         
             else{
-                $this->treatment($username, $balance, $about);
+                $this->treatment($username, $balance, $about); //если всё отлично, запускаем добавление пользователя
             }
         }
         
-        public static function checkBalance($balance){
-            if((float) $balance) return true;
+        public static function checkBalance($balance){ //метод проверки поля на числовое значние
+            if((int) $balance) return true;
             else return false;
         }
 
@@ -43,10 +43,10 @@
 
     class ShowUsers extends Dbconnect{
         public function getUsers(){
-
+        
             $get = "SELECT * FROM users";
             $result_get = $this->connect()->query($get);
-
+            //знаю, генерить код верстки в модели - это грех, но у меня возникли проблемы с переменными
             if(($result_get->num_rows) > 0){
                 while($row = $result_get->fetch_assoc()){
                     echo '<div class="user">';
@@ -60,7 +60,7 @@
     }
 
     class Generate extends Dbconnect{
-        public function genSelect(){
+        public function genSelect(){  //генерируем селект с именами.
             $get = "SELECT username FROM users";
             $result_get = $this->connect()->query($get);
             //echo '<select name="fromuser" id="sel1">';
